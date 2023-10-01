@@ -1,0 +1,40 @@
+
+<div style="background-image: URL('assets\images\class.png'); background-size: cover;">
+<h2 style="text-align: center; ">Attendance List</h2>
+
+
+    <table class="table table-striped" [ngStyle]="getStyle">
+        <thead>
+          <tr>
+            <th scope="col">NO.</th>
+            <th scope="col">PRESENT </th>
+            <th scope="col">NAME </th>
+            <th scope="col">STATUSES</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students; let i=index" >
+            <th scope="row">&nbsp;&nbsp;{{i+1}}</th>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" [(ngModel)]="attendance[student]" /></td>
+            <td>{{student}} </td>
+            <td>
+                <select class="form-select" id="validationCustom04" required>
+                    <option  value="1">Present</option>
+                    <option value="2">Absent</option>
+                    <option value="3">Late</option>
+                </select>   
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+
+  <!-- <label>
+    <input type="checkbox" [(ngModel)]="attendance[student]" /> {{ student }}
+  </label> -->
+
+<!-- <button (click)="submitAttendance()">Submit Attendance</button> -->
+<!-- <button routerLink="/file-upload">uploadFile</button> -->
